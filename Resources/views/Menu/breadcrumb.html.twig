@@ -1,8 +1,12 @@
 {% import _self as macros %}
 
-<ol class="breadcrumb">
-    {{ macros.draw(item, true) }}
-</ol>
+{% set breadcrumbs = macros.draw(item, true)|trim %}
+
+{% if breadcrumbs is not empty %}
+    <ol class="breadcrumb">
+        {{ breadcrumbs|raw }}
+    </ol>
+{% endif %}
 
 {% macro draw(item, active) %}
     {% import _self as macros %}
@@ -12,7 +16,8 @@
             {% if item.icon is not empty %}
                 <i class="fa {{ item.icon }}"></i>
             {% endif %}
-            {% if item.path and not active %}<a href="{{ path(item.path) }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}
+            {% if item.path and not active %}<a
+                href="{{ path(item.path) }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}
         </li>
     {% endif %}
 {% endmacro %}
