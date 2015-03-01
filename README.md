@@ -3,6 +3,8 @@ Vardius - User Bundle
 
 Menu Bundle provides multiple menu builder
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/1a5b4fce-d78d-432c-bff7-280ddc7a5ac5/big.png)](https://insight.sensiolabs.com/projects/1a5b4fce-d78d-432c-bff7-280ddc7a5ac5)
+
 ABOUT
 ==================================================
 Contributors:
