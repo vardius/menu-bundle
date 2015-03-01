@@ -1,0 +1,29 @@
+{
+    "name": "vardius/menu-bundle",
+    "description": "Symfony menu bundle",
+    "keywords": [
+        "menu", "menu bundle", "symfony2", "bundle", "symfony"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/Vardius/menu-bundle",
+    "authors": [
+        {
+          "name": "Rafał Lorenz",
+          "email": "vardius@gmail.com",
+          "homepage": "http://rafallorenz.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "symfony/symfony": "2.6.*"
+    },
+    "target-dir": "Vardius/Bundle/MenuBundle",
+    "autoload": {
+        "psr-0": { "Vardius\\Bundle\\MenuBundle": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}

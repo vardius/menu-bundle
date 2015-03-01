@@ -1,0 +1,21 @@
+{% import _self as macros %}
+
+{{ macros.draw(items) }}
+
+{% macro draw(children) %}
+    {% import _self as macros %}
+    {% if children|length > 0 %}
+        <ul>
+            {% for child in children %}
+                <li {% if app.request.get('_route') == child.path %}class="active"{% endif %}>
+                    <a href="{% if child.path is not null %}{{ path(child.path) }}{% else %}javascript:void(0);{% endif %}">{{ child.name }}
+                        {% if child.icon is not empty %}
+                            <i class="fa fa-fw {{ child.icon }}"></i>
+                        {% endif %}
+                    </a>
+                    {{ macros.draw(child.children) }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}

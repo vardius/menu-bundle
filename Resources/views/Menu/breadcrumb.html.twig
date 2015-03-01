@@ -1,0 +1,18 @@
+{% import _self as macros %}
+
+<ol class="breadcrumb">
+    {{ macros.draw(item, true) }}
+</ol>
+
+{% macro draw(item, active) %}
+    {% import _self as macros %}
+    {% if item|length > 0 %}
+        {{ macros.draw(item.parent, false) }}
+        <li{% if active %} class="active"{% endif %}>
+            {% if item.icon is not empty %}
+                <i class="fa {{ item.icon }}"></i>
+            {% endif %}
+            {% if item.path and not active %}<a href="{{ path(item.path) }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}
+        </li>
+    {% endif %}
+{% endmacro %}

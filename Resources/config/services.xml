@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <!--MENU-->
+        <parameter key="vardius_menu.menu.factory.class">Vardius\Bundle\MenuBundle\Menu\MenuBuilder</parameter>
+        <parameter key="vardius_menu.menu.class">Vardius\Bundle\MenuBundle\Menu\Menu</parameter>
+        <!--MANAGER-->
+        <parameter key="vardius_menu.menu_manager.class">Vardius\Bundle\MenuBundle\Manager\MenuManager</parameter>
+        <!--TWIG-->
+        <parameter key="vardius_menu.menu.twig_extension.class">Vardius\Bundle\MenuBundle\Twig\MenuExtension</parameter>
+        <parameter key="vardius_menu.breadcrumb.twig_extension.class">Vardius\Bundle\MenuBundle\Twig\BreadcrumbExtension</parameter>
+    </parameters>
+    <services>
+        <!--MENU-->
+        <service id="vardius_menu.menu.factory" class="%vardius_menu.menu.factory.class%">
+            <argument>%vardius_menu.menu_view%</argument>
+            <argument type="service" id="templating"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+        <!--MANAGER-->
+        <service id="vardius_menu.menu_manager" class="%vardius_menu.menu_manager.class%">
+            <argument type="service" id="request_stack"/>
+
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+        <!--TWIG-->
+        <service id="vardius_menu.menu.twig_extension" class="%vardius_menu.menu.twig_extension.class%" public="false">
+            <argument type="service" id="vardius_menu.menu_manager"/>
+
+            <tag name="twig.extension" />
+        </service>
+        <service id="vardius_menu.breadcrumb.twig_extension" class="%vardius_menu.breadcrumb.twig_extension.class%" public="false">
+            <argument type="service" id="vardius_menu.menu_manager"/>
+            <argument>%vardius_user.breadcrumb_view%</argument>
+
+            <tag name="twig.extension" />
+        </service>
+    </services>
+</container>
