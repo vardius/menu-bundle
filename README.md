@@ -32,11 +32,14 @@ Installation
 
 Install the package through composer:
 
+``` bash
     php composer.phar require vardius/menu-bundle:*
+```
 
 ### 2. Enable the VardiusMenuBundle
 Enable the bundle in the kernel:
 
+``` php
     <?php
     // app/AppKernel.php
 
@@ -49,10 +52,12 @@ Enable the bundle in the kernel:
             
         // ...
     }
+```
     
 ### 3. Configure menu
 Optionally ,you can provide global menu templates that will be used to render menu
 
+``` yaml
     #app/config/cinfig.yml
     
     #default menu-bundle templates
@@ -60,24 +65,30 @@ Optionally ,you can provide global menu templates that will be used to render me
         views:
             menu_view: VardiusAdminBundle::menu.html.twig
             breadcrumb_view: VardiusAdminBundle::breadcrumb.html.twig
+```
     
 ### 4. Create menu
 
+``` xml
     <service id="vardius_admin.menu" class="%vardius_menu.menu.class%" factory-service="vardius_menu.menu.factory" factory-method="get">
         <argument>admin_menu</argument>
         <!--optional add custom menu template -->
         <argument>VardiusAdminBundle::menu.html.twig</argument> 
     </service>
+```
 
 ### 5. Add items to your menu
 Create subscriber
 
-        <service id="vardius_admin.menu_subscriber" class="Vardius\Bundle\AdminBundle\EventListener\MenuSubscriber">
-            <tag name="kernel.event_subscriber"/>
-        </service>
+``` xml
+    <service id="vardius_admin.menu_subscriber" class="Vardius\Bundle\AdminBundle\EventListener\MenuSubscriber">
+        <tag name="kernel.event_subscriber"/>
+    </service>
+```
         
 Add items in your subscriber
 
+``` php
     class MenuSubscriber implements EventSubscriberInterface
     {
         /**
@@ -103,16 +114,21 @@ Add items in your subscriber
             }
         }
     }
+```
     
 ### 6. Render menu
 
+``` twig
     {{ 'vardius_admin.menu'|vardius_menu|raw }}
+```
     
 You can also render breadcrumb for active menu item
 
+``` twig
     {{ 'vardius_admin.menu'|vardius_breadcrumb|raw }}
     
     {{ 'vardius_admin.menu'|vardius_breadcrumb('VardiusAdminBundle::breadcrumb.html.twig')|raw }}
+```
 
 RELEASE NOTES
 ==================================================
