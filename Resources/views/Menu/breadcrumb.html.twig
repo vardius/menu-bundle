@@ -16,8 +16,11 @@
             {% if item.icon is not empty %}
                 <i class="fa {{ item.icon }}"></i>
             {% endif %}
-            {% if item.path and not active %}<a
-                href="{{ path(item.path, child.params) }}">{{ item.name|trans }}</a>{% else %}{{ item.name|trans }}{% endif %}
+            {% if item.path and not active %}
+                <a href="{{ path(item.path, item.params) }}">{{ item.name|trans }}</a>
+            {% else %}
+                {{ item.name|trans }}
+            {% endif %}
         </li>
     {% endif %}
 {% endmacro %}
