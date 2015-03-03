@@ -8,7 +8,7 @@
         <ul>
             {% for child in children %}
                 <li {% if app.request.get('_route') == child.path %}class="active"{% endif %}>
-                    <a href="{% if child.path is not null %}{{ path(child.path) }}{% else %}javascript:void(0);{% endif %}">{{ child.name }}
+                    <a href="{% if child.path is not null %}{{ path(child.path, child.params) }}{% else %}javascript:void(0);{% endif %}">{{ child.name|trans }}
                         {% if child.icon is not empty %}
                             <i class="fa fa-fw {{ child.icon }}"></i>
                         {% endif %}

@@ -20,6 +20,8 @@ class MenuItem implements MenuItemInterface
     protected $name;
     /** @var  string */
     protected $path;
+    /** @var  array */
+    protected $params;
     /** @var string */
     protected $icon;
     /** @var  ArrayCollection */
@@ -30,12 +32,14 @@ class MenuItem implements MenuItemInterface
     /**
      * @param $name
      * @param $path
+     * @param array $params
      * @param string $icon
      */
-    function __construct($name, $path = null, $icon = null)
+    function __construct($name, $path = null, array $params = [], $icon = null)
     {
         $this->name = $name;
         $this->path = $path;
+        $this->params = $params;
         $this->icon = $icon;
         $this->children = new ArrayCollection();
     }
@@ -70,6 +74,22 @@ class MenuItem implements MenuItemInterface
     public function setPath($path)
     {
         $this->path = $path;
+    }
+
+    /**
+     * @return array
+     */
+    public function getParams()
+    {
+        return $this->params;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setParams($params)
+    {
+        $this->params = $params;
     }
 
     /**

@@ -27,6 +27,11 @@ interface MenuItemInterface
     public function setPath($path);
 
     /**
+     * @param array $params
+     */
+    public function setParams($params);
+
+    /**
      * @param string $icon
      */
     public function setIcon($icon);

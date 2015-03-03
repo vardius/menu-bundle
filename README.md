@@ -107,8 +107,8 @@ Add items in your subscriber
             if ($menu->getName() === 'admin_menu') {
                 $item = new MenuItem('profile');
                 //$item = new MenuItem('profile', 'profile_show');
-                $item->addChild(new MenuItem('show', 'profile_show'));
-                $item->addChild(new MenuItem('edit', 'profile_edit'));
+                $item->addChild(new MenuItem('show', 'profile_show', [ 'id' => 1]));
+                $item->addChild(new MenuItem('edit', 'profile_edit', [ 'id' => 1]));
     
                 $menu->addChild($item);
             }
@@ -135,3 +135,7 @@ RELEASE NOTES
 **0.1.0**
 
 - First public release of menu-bundle
+
+**0.2.0**
+
+- Major bug fix and updates
