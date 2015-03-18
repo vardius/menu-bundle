@@ -44,9 +44,11 @@ class Menu implements MenuInterface
     /**
      * @inheritDoc
      */
-    public function render()
+    public function render($view = null)
     {
-        return $this->twigEngine->render($this->view, [
+        $menuView = ($view ?: $this->view);
+
+        return $this->twigEngine->render($menuView, [
             'items' => $this->children,
         ]);
     }

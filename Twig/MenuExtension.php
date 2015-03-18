@@ -39,11 +39,14 @@ class MenuExtension extends \Twig_Extension
 
     /**
      * @param $name
+     * @param string $view
      * @return string
      */
-    public function renderMenu($name)
+    public function renderMenu($name, $view = null)
     {
-        return $this->menuManager->getMenu($name)->render();
+        $menu = $this->menuManager->getMenu($name);
+
+        return $menu->render($view);
     }
 
     /**

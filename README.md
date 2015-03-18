@@ -120,6 +120,8 @@ Add items in your subscriber
 
 ``` twig
     {{ 'vardius_admin.menu'|vardius_menu|raw }}
+    
+    {{ 'vardius_admin.menu'|vardius_menu('VardiusAdminBundle::menu.html.twig')|raw }}
 ```
     
 You can also render breadcrumb for active menu item
