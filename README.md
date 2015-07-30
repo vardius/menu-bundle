@@ -58,7 +58,7 @@ Enable the bundle in the kernel:
 Optionally ,you can provide global menu templates that will be used to render menu
 
 ``` yaml
-    #app/config/cinfig.yml
+    #app/config/config.yml
     
     #default menu-bundle templates
     vardius_menu:
