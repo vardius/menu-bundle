@@ -15,12 +15,12 @@ namespace Vardius\Bundle\MenuBundle\Event;
 final class MenuEvents
 {
     /**
-     * The menu event is thrown each time an menu is build
+     * The vardius_menu.build event is thrown each time an menu is build
      *
      * The event listener receives an
      * Vardius\Bundle\MenuBundle\Event\MenuEvent instance.
      *
      * @var string
      */
-    const MENU = 'menu.build';
+    const MENU = 'vardius_menu.build';
 }
