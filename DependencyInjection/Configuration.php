@@ -2,7 +2,7 @@
 /**
  * This file is part of the vardius/menu-bundle package.
  *
- * Created by Rafał Lorenz <vardius@gmail.com>.
+ * Created by Rafał Lorenz <support@vardius.dev>.
  */
 
 namespace Vardius\Bundle\MenuBundle\DependencyInjection;
@@ -13,7 +13,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 /**
  * Vardius\Bundle\MenuBundle\DependencyInjection\Configuration
  *
- * @author Rafał Lorenz <vardius@gmail.com>
+ * @author Rafał Lorenz <support@vardius.dev>
  *
  * This is the class that validates and merges configuration from your app/config files
  *

@@ -2,7 +2,7 @@
 /**
  * This file is part of the vardius/menu-bundle package.
  *
- * Created by Rafał Lorenz <vardius@gmail.com>.
+ * Created by Rafał Lorenz <support@vardius.dev>.
  */
 
 namespace Vardius\Bundle\MenuBundle\Manager;
@@ -15,7 +15,7 @@ use Vardius\Bundle\MenuBundle\Menu\Menu;
 /**
  * Vardius\Bundle\MenuBundle\Manager\MenuManager
  *
- * @author Rafał Lorenz <vardius@gmail.com>
+ * @author Rafał Lorenz <support@vardius.dev>
  */
 class MenuManager extends ContainerAware
 {

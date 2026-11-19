@@ -2,7 +2,7 @@
 /**
  * This file is part of the vardius/menu-bundle package.
  *
- * Created by Rafał Lorenz <vardius@gmail.com>.
+ * Created by Rafał Lorenz <support@vardius.dev>.
  */
 
 namespace Vardius\Bundle\MenuBundle\Event;
@@ -10,7 +10,7 @@ namespace Vardius\Bundle\MenuBundle\Event;
 /**
  * Vardius\Bundle\MenuBundle\Event\MenuEvents
  *
- * @author Rafał Lorenz <vardius@gmail.com>
+ * @author Rafał Lorenz <support@vardius.dev>
  */
 final class MenuEvents
 {

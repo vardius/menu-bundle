@@ -2,7 +2,7 @@
 /**
  * This file is part of the vardius/menu-bundle package.
  *
- * Created by Rafał Lorenz <vardius@gmail.com>.
+ * Created by Rafał Lorenz <support@vardius.dev>.
  */
 
 namespace Vardius\Bundle\MenuBundle\DependencyInjection;
@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\Loader;
 /**
  * Vardius\Bundle\MenuBundle\DependencyInjection\VardiusMenuExtension
  *
- * @author Rafał Lorenz <vardius@gmail.com>
+ * @author Rafał Lorenz <support@vardius.dev>
  *
  * This is the class that loads and manages your bundle configuration
  *

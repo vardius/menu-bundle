@@ -2,7 +2,7 @@
 /**
  * This file is part of the vardius/menu-bundle package.
  *
- * Created by Rafał Lorenz <vardius@gmail.com>.
+ * Created by Rafał Lorenz <support@vardius.dev>.
  */
 
 namespace Vardius\Bundle\MenuBundle\Twig;
@@ -12,7 +12,7 @@ use Vardius\Bundle\MenuBundle\Manager\MenuManager;
 /**
  * Vardius\Bundle\MenuBundle\Twig\BreadcrumbExtension
  *
- * @author Rafał Lorenz <vardius@gmail.com>
+ * @author Rafał Lorenz <support@vardius.dev>
  */
 class BreadcrumbExtension extends \Twig_Extension
 {
